@@ -1,5 +1,6 @@
 import math
 import re
+import six
 
 
 class LZString(object):
@@ -48,7 +49,7 @@ class LZString(object):
 
                             if context_data_position == 15:
                                 context_data_position = 0
-                                context_data_string += chr(context_data_val)
+                                context_data_string += six.unichr(context_data_val)
                                 context_data_val = 0
                             else:
                                 context_data_position += 1
@@ -60,7 +61,7 @@ class LZString(object):
 
                             if context_data_position == 15:
                                 context_data_position = 0
-                                context_data_string += chr(context_data_val)
+                                context_data_string += six.unichr(context_data_val)
                                 context_data_val = 0
                             else:
                                 context_data_position += 1
@@ -74,7 +75,7 @@ class LZString(object):
 
                             if context_data_position == 15:
                                 context_data_position = 0
-                                context_data_string += chr(context_data_val)
+                                context_data_string += six.unichr(context_data_val)
                                 context_data_val = 0
                             else:
                                 context_data_position += 1
@@ -88,7 +89,7 @@ class LZString(object):
 
                             if context_data_position == 15:
                                 context_data_position = 0
-                                context_data_string += chr(context_data_val)
+                                context_data_string += six.unichr(context_data_val)
                                 context_data_val = 0
                             else:
                                 context_data_position += 1
@@ -111,7 +112,7 @@ class LZString(object):
 
                         if context_data_position == 15:
                             context_data_position = 0
-                            context_data_string += chr(context_data_val)
+                            context_data_string += six.unichr(context_data_val)
                             context_data_val = 0
                         else:
                             context_data_position += 1
@@ -135,7 +136,7 @@ class LZString(object):
 
                         if context_data_position == 15:
                             context_data_position = 0
-                            context_data_string += chr(context_data_val)
+                            context_data_string += six.unichr(context_data_val)
                             context_data_val = 0
                         else:
                             context_data_position += 1
@@ -147,7 +148,7 @@ class LZString(object):
 
                         if context_data_position == 15:
                             context_data_position = 0
-                            context_data_string += chr(context_data_val)
+                            context_data_string += six.unichr(context_data_val)
                             context_data_val = 0
                         else:
                             context_data_position += 1
@@ -161,7 +162,7 @@ class LZString(object):
 
                         if context_data_position == 15:
                             context_data_position = 0
-                            context_data_string += chr(context_data_val)
+                            context_data_string += six.unichr(context_data_val)
                             context_data_val = 0
                         else:
                             context_data_position += 1
@@ -175,7 +176,7 @@ class LZString(object):
 
                         if context_data_position == 15:
                             context_data_position = 0
-                            context_data_string += chr(context_data_val)
+                            context_data_string += six.unichr(context_data_val)
                             context_data_val = 0
                         else:
                             context_data_position += 1
@@ -198,7 +199,7 @@ class LZString(object):
 
                     if context_data_position == 15:
                         context_data_position = 0
-                        context_data_string += chr(context_data_val)
+                        context_data_string += six.unichr(context_data_val)
                         context_data_val = 0
                     else:
                         context_data_position += 1
@@ -218,7 +219,7 @@ class LZString(object):
 
             if context_data_position == 15:
                 context_data_position = 0
-                context_data_string += chr(context_data_val)
+                context_data_string += six.unichr(context_data_val)
                 context_data_val = 0
             else:
                 context_data_position += 1
@@ -229,7 +230,7 @@ class LZString(object):
             context_data_val = (context_data_val << 1)
 
             if context_data_position == 15:
-                context_data_string += chr(context_data_val)
+                context_data_string += six.unichr(context_data_val)
                 break
             else:
                 context_data_position += 1
@@ -308,68 +309,68 @@ class LZString(object):
 
             if status == 0:
                 status += 1
-                output += chr(((c >> 1) + 32))
+                output += six.unichr(((c >> 1) + 32))
                 current = (c & 1) << 14
             elif status == 1:
                 status += 1
-                output += chr(((current + (c >> 2)) + 32))
+                output += six.unichr(((current + (c >> 2)) + 32))
                 current = (c & 3) << 13
             elif status == 2:
                 status += 1
-                output += chr(((current + (c >> 3)) + 32))
+                output += six.unichr(((current + (c >> 3)) + 32))
                 current = (c & 7) << 12
             elif status == 3:
                 status += 1
-                output += chr(((current + (c >> 4)) + 32))
+                output += six.unichr(((current + (c >> 4)) + 32))
                 current = (c & 15) << 11
             elif status == 4:
                 status += 1
-                output += chr(((current + (c >> 5)) + 32))
+                output += six.unichr(((current + (c >> 5)) + 32))
                 current = (c & 31) << 10
             elif status == 5:
                 status += 1
-                output += chr(((current + (c >> 6)) + 32))
+                output += six.unichr(((current + (c >> 6)) + 32))
                 current = (c & 63) << 9
             elif status == 6:
                 status += 1
-                output += chr(((current + (c >> 7)) + 32))
+                output += six.unichr(((current + (c >> 7)) + 32))
                 current = (c & 127) << 8
             elif status == 7:
                 status += 1
-                output += chr(((current + (c >> 8)) + 32))
+                output += six.unichr(((current + (c >> 8)) + 32))
                 current = (c & 255) << 7
             elif status == 8:
                 status += 1
-                output += chr(((current + (c >> 9)) + 32))
+                output += six.unichr(((current + (c >> 9)) + 32))
                 current = (c & 511) << 6
             elif status == 9:
                 status += 1
-                output += chr(((current + (c >> 10)) + 32))
+                output += six.unichr(((current + (c >> 10)) + 32))
                 current = (c & 1023) << 5
             elif status == 10:
                 status += 1
-                output += chr(((current + (c >> 11)) + 32))
+                output += six.unichr(((current + (c >> 11)) + 32))
                 current = (c & 2047) << 4
             elif status == 11:
                 status += 1
-                output += chr(((current + (c >> 12)) + 32))
+                output += six.unichr(((current + (c >> 12)) + 32))
                 current = (c & 4095) << 3
             elif status == 12:
                 status += 1
-                output += chr(((current + (c >> 13)) + 32))
+                output += six.unichr(((current + (c >> 13)) + 32))
                 current = (c & 8191) << 2
             elif status == 13:
                 status += 1
-                output += chr(((current + (c >> 14)) + 32))
+                output += six.unichr(((current + (c >> 14)) + 32))
                 current = (c & 16383) << 1
             elif status == 14:
                 status += 1
-                output += chr(((current + (c >> 15)) + 32))
-                output += chr((c & 32767) + 32)
+                output += six.unichr(((current + (c >> 15)) + 32))
+                output += six.unichr((c & 32767) + 32)
 
                 status = 0
 
-        output += chr(current + 32)
+        output += six.unichr(current + 32)
 
         return output
 
@@ -391,63 +392,63 @@ class LZString(object):
                 current = c << 1
             elif status == 1:
                 status = 2
-                output += chr(current + (c >> 14))
+                output += six.unichr(current + (c >> 14))
                 current = (c & 16383) << 2
             elif status == 2:
                 status = 3
-                output += chr(current + (c >> 13))
+                output += six.unichr(current + (c >> 13))
                 current = (c & 8191) << 3
             elif status == 3:
                 status = 4
-                output += chr(current + (c >> 12))
+                output += six.unichr(current + (c >> 12))
                 current = (c & 4095) << 4
             elif status == 4:
                 status = 5
-                output += chr(current + (c >> 11))
+                output += six.unichr(current + (c >> 11))
                 current = (c & 2047) << 5
             elif status == 5:
                 status = 6
-                output += chr(current + (c >> 10))
+                output += six.unichr(current + (c >> 10))
                 current = (c & 1023) << 6
             elif status == 6:
                 status = 7
-                output += chr(current + (c >> 9))
+                output += six.unichr(current + (c >> 9))
                 current = (c & 511) << 7
             elif status == 7:
                 status = 8
-                output += chr(current + (c >> 8))
+                output += six.unichr(current + (c >> 8))
                 current = (c & 255) << 8
             elif status == 8:
                 status = 9
-                output += chr(current + (c >> 7))
+                output += six.unichr(current + (c >> 7))
                 current = (c & 127) << 9
             elif status == 9:
                 status = 10
-                output += chr(current + (c >> 6))
+                output += six.unichr(current + (c >> 6))
                 current = (c & 63) << 10
             elif status == 10:
                 status = 11
-                output += chr(current + (c >> 5))
+                output += six.unichr(current + (c >> 5))
                 current = (c & 31) << 11
             elif status == 11:
                 status = 12
-                output += chr(current + (c >> 4))
+                output += six.unichr(current + (c >> 4))
                 current = (c & 15) << 12
             elif status == 12:
                 status = 13
-                output += chr(current + (c >> 3))
+                output += six.unichr(current + (c >> 3))
                 current = (c & 7) << 13
             elif status == 13:
                 status = 14
-                output += chr(current + (c >> 2))
+                output += six.unichr(current + (c >> 2))
                 current = (c & 3) << 14
             elif status == 14:
                 status = 15
-                output += chr(current + (c >> 1))
+                output += six.unichr(current + (c >> 1))
                 current = (c & 1) << 15
             elif status == 15:
                 status = 0
-                output += chr(current + c)
+                output += six.unichr(current + c)
                 current = (c & 1) << 15
 
         return self.decompress(output)
@@ -507,7 +508,7 @@ class LZString(object):
                 bits |= (1 if resb > 0 else 0) * power
                 power <<= 1
 
-            c = chr(bits)
+            c = six.unichr(bits)
         elif nnext == 1:
             bits = 0
             maxpower = pow(2, 16)
@@ -525,7 +526,7 @@ class LZString(object):
                 bits |= (1 if resb > 0 else 0) * power
                 power <<= 1
 
-            c = chr(bits)
+            c = six.unichr(bits)
         elif nnext == 2:
             return ''
 
@@ -572,7 +573,7 @@ class LZString(object):
                     bits |= (1 if resb > 0 else 0) * power
                     power <<= 1
 
-                dictionary[dictSize] = chr(bits)
+                dictionary[dictSize] = six.unichr(bits)
                 dictSize += 1
                 c = dictSize - 1
                 enlargeIn -= 1
@@ -593,7 +594,7 @@ class LZString(object):
                     bits |= (1 if resb > 0 else 0) * power
                     power <<= 1
 
-                dictionary[dictSize] = chr(bits)
+                dictionary[dictSize] = six.unichr(bits)
                 dictSize += 1
                 c = dictSize - 1
                 enlargeIn -= 1
@@ -654,18 +655,18 @@ class LZString(object):
                 output_ = chr1 << 8
 
                 if enc3 != 64:
-                    output += chr(output_ | chr2)
+                    output += six.unichr(output_ | chr2)
 
                 if enc4 != 64:
                     output_ = chr3 << 8
             else:
-                output = output + chr(output_ | chr1)
+                output = output + six.unichr(output_ | chr1)
 
                 if enc3 != 64:
                     output_ = chr2 << 8
 
                 if enc4 != 64:
-                    output += chr(output_ | chr3)
+                    output += six.unichr(output_ | chr3)
 
             ol += 3
 
