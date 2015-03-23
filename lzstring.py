@@ -2,7 +2,7 @@ import math
 import re
 
 
-class LZString:
+class LZString(object):
 
     def __init__(self):
         self.keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="
