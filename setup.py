@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='python-lz-string',
+    name='lz-string-python',
     version='1.0',
     py_modules=['lzstring'],
     url='https://github.com/alexsilva/lz-string-python',
